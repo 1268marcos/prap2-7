@@ -1,0 +1,75 @@
+package com.example.agendiario;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+
+@Entity(tableName = "curiosities")
+
+class Curiosity {
+
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @ColumnInfo(description = "curiosityId")
+    private int curiosityId;
+
+    @Nullable
+    @ColumnInfo(description = "curiosityTitle")
+
+    private String curiosityTitle;
+
+    private String curiosityHowDidYouKnow;
+
+    public Donation(@Nullable String description, String howDidYouKnow, int importance, String creationDate) {
+        curiosityDescription = description;
+        curiosityHowDidYouKnow = howDidYouKnow;
+        curiosityImportance = importance;
+        curiosityCreationDate = creationDate;
+    }
+
+    public int getId() {
+        return curiosityId;
+    }
+
+    public void setId(int id) {
+        curiosityId = id;
+    }
+
+    public String getDescription() {
+        return curiosityDescription;
+
+    public void setDescription(String description) {
+        curiosityDescription = description;
+    }
+
+    public String getHowDidYouKnow() {
+        return curiosityHowDidYouKnow;
+    }
+
+    public void setHowDidYouKnow(String howDidYouKnow) {
+        curiosityHowDidYouKnow = howDidYouKnow;
+    }
+
+    public int getImportance() {
+        return curiosityImportance;
+    }
+
+    public void setImportance(int importance) {
+        curiosityImportance = importance;
+    }
+
+    public String getCreationDate() {
+        return curiosityCreationDate;
+    }
+
+    public void setCreationDate(String creationDate) {
+        curiosityCreationDate = creationDate;
+    }
+
+    private int curiosityImportance;
+    private String curiosityCreationDate;
+
+}
