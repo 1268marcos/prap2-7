@@ -1,3 +1,5 @@
+// quando criar uma classe ao dar nome para ela acrescente ao final .JAVA
+
 package com.example.agendiario;
 
 import androidx.annotation.NonNull;
@@ -9,21 +11,21 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "curiosities")
 
-class Curiosity {
+public class Curiosity {
 
     @PrimaryKey(autoGenerate = true)
     @NonNull
-    @ColumnInfo(description = "curiosityId")
+    @ColumnInfo(name = "curiosityId")
     private int curiosityId;
 
     @Nullable
-    @ColumnInfo(description = "curiosityTitle")
+    @ColumnInfo(name = "curiosityTitle")
 
-    private String curiosityTitle;
+    private String curiosityDescription;
 
     private String curiosityHowDidYouKnow;
 
-    public Donation(@Nullable String description, String howDidYouKnow, int importance, String creationDate) {
+    public Curiosity(@Nullable String description, String howDidYouKnow, int importance, String creationDate) {
         curiosityDescription = description;
         curiosityHowDidYouKnow = howDidYouKnow;
         curiosityImportance = importance;
@@ -39,7 +41,8 @@ class Curiosity {
     }
 
     public String getDescription() {
-        return curiosityDescription;
+        return curiosityDescription; 
+        }
 
     public void setDescription(String description) {
         curiosityDescription = description;
